@@ -1,5 +1,7 @@
 package com.facturator.bill.crud.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cli_numero")
+
 	private int cNumero;
 	
 	@Column(name="cli_type")
@@ -42,6 +45,12 @@ public class Client {
 	
 	@Column(name="cli_email")
 	private String cEmail;
+	
+//	 @OneToMany(
+//		        cascade = CascadeType.ALL,
+//		        orphanRemoval = true
+//		    )
+//		    private List<Facture> fac = new ArrayList<>();
 	
 	public Client() {
 		
@@ -148,5 +157,5 @@ public class Client {
 				+ cVille + ", cTelephoneMobile=" + cTelephoneMobile + ", cTelephoneFixe=" + cTelephoneFixe
 				+ ", cSiteInternet=" + cSiteInternet + ", cEmail=" + cEmail + "]";
 	}
-	
+
 }
